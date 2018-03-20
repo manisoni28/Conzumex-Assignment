@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "389340413503",
+    "firebase_url": "https://conzu-14e95.firebaseio.com",
+    "project_id": "conzu-14e95",
+    "storage_bucket": "conzu-14e95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:389340413503:android:c2e1c77ebaec920d",
+        "android_client_info": {
+          "package_name": "com.mani.conzumex.assignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "389340413503-i90suel0sq7e196vjuqia9fhm6nd6q2g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mani.conzumex.assignment",
+            "certificate_hash": "65cac6b160691481224ad8484dc12c20c71a8e26"
+          }
+        },
+        {
+          "client_id": "389340413503-um8ukjv5lcn1g1lrln9i23jmercn00at.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnRm23KxSCGqoML8SQW-cVV9JkNM85gmg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "389340413503-um8ukjv5lcn1g1lrln9i23jmercn00at.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

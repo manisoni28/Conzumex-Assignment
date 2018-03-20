@@ -34,7 +34,7 @@
         android:layout_height="56dp"
         android:id="@+id/imageButton"
         app:pressedTranslationZ="12dp"
-        android:background="@drawable/oval"
+        android:background="@drawable/type"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="false"
         android:elevation="10dp"

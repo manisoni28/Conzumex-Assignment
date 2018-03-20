@@ -5,8 +5,10 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +25,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.mani.conzumex.assignment.R;
 import com.mani.conzumex.assignment.adapters.ActivityAdapter;
 import com.mani.conzumex.assignment.modal.ActivityData;
@@ -43,11 +47,31 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     private int mYear, mMonth, mDay, mHour, mMinute;
     String startDate,startTime,endDate,endTime;
     SqliteHelper mySqliteHelper;
+    private FirebaseAuth.AuthStateListener authListener;
+    private FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mySqliteHelper = new SqliteHelper(this);
         setContentView(R.layout.activity_main);
+        //get firebase auth instance
+        auth = FirebaseAuth.getInstance();
+
+        //get current user
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        authListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user == null) {
+                    // user auth state is changed - user is null
+                    // launch login activity
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                    finish();
+                }
+            }
+        };
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view_s);
         layoutManager = new LinearLayoutManager(getApplicationContext());
         addTask = (FloatingActionButton) findViewById(R.id.imageButton);
@@ -261,6 +285,19 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     @Override
     public void onRefresh() {
         updateCardView();
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        auth.addAuthStateListener(authListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (authListener != null) {
+            auth.removeAuthStateListener(authListener);
+        }
     }
 
 }
