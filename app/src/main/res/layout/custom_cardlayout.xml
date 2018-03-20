@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:elevation="15dp"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="5dp"
+        android:background="#ffffff"
+        android:elevation="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:padding="2dp"
+            android:weightSum="100"
+            android:orientation="vertical"
+
+            >
+            <TextView
+                android:id="@+id/activityName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_weight="25"
+                android:gravity="center"
+                android:fontFamily="sans-serif"
+                android:text="Movie Name"
+                android:textStyle="bold"
+                android:textColor="@color/cyan500"
+                android:textSize="18dp" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:weightSum="100"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+            <ImageButton
+                android:id="@+id/typeCircle"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_weight="50"
+                android:background="@drawable/type" />
+
+            <TextView
+                android:id="@+id/activityIntensity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/typeCircle"
+                android:fontFamily="sans-serif"
+                android:text="Movie Name"
+                android:textColor="@color/primary_text"
+                android:textSize="14dp"
+                android:gravity="center_vertical"
+                android:layout_weight="50"
+                />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/activityStartTimeDate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif"
+                android:text="Movie Name"
+                android:layout_weight="25"
+                android:textColor="@color/primary_text"
+                android:textSize="14dp"
+                android:gravity="center"
+            />
+
+
+            <TextView
+                android:id="@+id/activityEndTimeDate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif"
+                android:text="Movie Name"
+                android:layout_weight="25"
+                android:textColor="@color/primary_text"
+                android:textSize="14dp"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

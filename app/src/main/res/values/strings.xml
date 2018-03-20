@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Conzumex Assignment</string>
+    <string name="set_date">Start Date</string>
+    <string name="set_time">Start Time</string>
+    <string name="set_enddate"> End Date </string>
+    <string name="set_endtime"> End Time </string>
+
+</resources>
